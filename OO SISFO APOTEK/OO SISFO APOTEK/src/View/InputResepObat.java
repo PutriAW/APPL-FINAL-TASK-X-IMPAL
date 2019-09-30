@@ -13,12 +13,12 @@ import javax.swing.JButton;
  *
  * @author PUTRI
  */
-public class Pemesanan extends javax.swing.JFrame {
+public class InputResepObat extends javax.swing.JFrame {
 
     /**
      * Creates new form Supplier
      */
-    public Pemesanan() {
+    public InputResepObat() {
         initComponents();
     }
 
@@ -32,115 +32,91 @@ public class Pemesanan extends javax.swing.JFrame {
     private void initComponents() {
 
         pmsPnl = new javax.swing.JPanel();
-        pmsLbl = new javax.swing.JLabel();
+        aptIdLbl = new javax.swing.JLabel();
         tglLbl = new javax.swing.JLabel();
         totalLbl = new javax.swing.JLabel();
-        tfId = new javax.swing.JTextField();
-        tfTotal = new javax.swing.JTextField();
+        tfId2 = new javax.swing.JTextField();
         dcPms = new datechooser.beans.DateChooserCombo();
         btnSimpan = new java.awt.Button();
         btnBatal = new java.awt.Button();
+        tfId1 = new javax.swing.JTextField();
+        rspIdLbl1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTDeskripsi = new javax.swing.JTextArea();
         judulLbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(240, 236, 236));
-        setMinimumSize(new java.awt.Dimension(767, 548));
+        setMinimumSize(new java.awt.Dimension(600, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pmsPnl.setBackground(new java.awt.Color(255, 255, 255));
         pmsPnl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        pmsPnl.setMinimumSize(new java.awt.Dimension(1280, 1024));
+        pmsPnl.setMinimumSize(new java.awt.Dimension(500, 400));
+        pmsPnl.setPreferredSize(new java.awt.Dimension(500, 350));
         pmsPnl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pmsLbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        pmsLbl.setText("Id_Pemesanan");
-        pmsPnl.add(pmsLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 44, -1, -1));
+        aptIdLbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        aptIdLbl.setText("Id_Apoteker");
+        pmsPnl.add(aptIdLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, -1));
 
         tglLbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        tglLbl.setText("Tanggal Pemesanan");
-        pmsPnl.add(tglLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 107, -1, -1));
+        tglLbl.setText("Tanggal Resep");
+        pmsPnl.add(tglLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
 
         totalLbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        totalLbl.setText("Total Pemesanan");
-        pmsPnl.add(totalLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 293, -1, -1));
+        totalLbl.setText("Deskripsi");
+        pmsPnl.add(totalLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
 
-        tfId.setMinimumSize(new java.awt.Dimension(6, 30));
-        pmsPnl.add(tfId, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 41, 427, 35));
-
-        tfTotal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfTotalActionPerformed(evt);
-            }
-        });
-        pmsPnl.add(tfTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 290, 427, 35));
-        pmsPnl.add(dcPms, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 94, 427, 35));
+        tfId2.setMinimumSize(new java.awt.Dimension(6, 30));
+        pmsPnl.add(tfId2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 460, 35));
+        pmsPnl.add(dcPms, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 460, 35));
 
         btnSimpan.setBackground(new java.awt.Color(86, 204, 242));
         btnSimpan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSimpan.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnSimpan.setLabel("Simpan");
         btnSimpan.setPreferredSize(new java.awt.Dimension(100, 30));
-        pmsPnl.add(btnSimpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 340, -1, -1));
+        pmsPnl.add(btnSimpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 500, -1, -1));
 
         btnBatal.setBackground(new java.awt.Color(86, 204, 242));
         btnBatal.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnBatal.setLabel("Batal");
         btnBatal.setPreferredSize(new java.awt.Dimension(100, 30));
-        pmsPnl.add(btnBatal, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 340, -1, -1));
+        pmsPnl.add(btnBatal, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 500, -1, -1));
 
-        getContentPane().add(pmsPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 95, 670, 390));
+        tfId1.setMinimumSize(new java.awt.Dimension(6, 30));
+        tfId1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfId1ActionPerformed(evt);
+            }
+        });
+        pmsPnl.add(tfId1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 460, 35));
+
+        rspIdLbl1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        rspIdLbl1.setText("Id_Resep");
+        pmsPnl.add(rspIdLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
+
+        jTDeskripsi.setColumns(20);
+        jTDeskripsi.setRows(5);
+        jScrollPane1.setViewportView(jTDeskripsi);
+
+        pmsPnl.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 460, 230));
+
+        getContentPane().add(pmsPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 95, 780, 570));
 
         judulLbl.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        judulLbl.setText("Tambah Detail Pemesanan");
-        getContentPane().add(judulLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 48, -1, -1));
+        judulLbl.setText("Tambah Data Resep Obat");
+        getContentPane().add(judulLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 290, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tfTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfTotalActionPerformed
+    private void tfId1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfId1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfTotalActionPerformed
+    }//GEN-LAST:event_tfId1ActionPerformed
 
-     public void setActionListener(ActionListener a){
-        btnSimpan.addActionListener(a);
-        btnBatal.addActionListener(a);
-    }
-    
-    public Button getBtnSimpan(){
-        return btnSimpan;
-    }
-    
-    public Button getBtnBatal(){
-        return btnBatal;
-    }
-    
-    public String getID(){
-        return tfId.getText();
-    }
-
-     public String getTglPesan(){
-        java.text.SimpleDateFormat kal = new java.text.SimpleDateFormat ("yyyy-MM-dd");
-        dcPms.setDateFormat(kal);
-        return dcPms.getText();
-    }
-    
-    public int getTotal(){
-        int i = 0;
-        if (tfTotal.getText().length() == 0){
-            javax.swing.JOptionPane.showMessageDialog(null, "total tidak boleh kosong");
-        }else{
-            i = Integer.parseInt(tfTotal.getText());
-        }
-//        try{
-//           i = Integer.parseInt(tfTotal.getText());
-//        }catch(Exception e){
-//            javax.swing.JOptionPane.showMessageDialog(null, "Bukan Integer"); 
-//        }
-        return i;
-        
-        
-    }
-    
+     
     /**
      * @param args the command line arguments
      */
@@ -158,34 +134,51 @@ public class Pemesanan extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Pemesanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InputResepObat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Pemesanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InputResepObat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Pemesanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InputResepObat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Pemesanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InputResepObat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Pemesanan().setVisible(true);
+                new InputResepObat().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel aptIdLbl;
     private java.awt.Button btnBatal;
     private java.awt.Button btnSimpan;
     private datechooser.beans.DateChooserCombo dcPms;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTDeskripsi;
     private javax.swing.JLabel judulLbl;
-    private javax.swing.JLabel pmsLbl;
     private javax.swing.JPanel pmsPnl;
-    private javax.swing.JTextField tfId;
-    private javax.swing.JTextField tfTotal;
+    private javax.swing.JLabel rspIdLbl1;
+    private javax.swing.JTextField tfId1;
+    private javax.swing.JTextField tfId2;
     private javax.swing.JLabel tglLbl;
     private javax.swing.JLabel totalLbl;
     // End of variables declaration//GEN-END:variables
