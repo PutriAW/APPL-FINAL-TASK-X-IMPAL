@@ -5,8 +5,8 @@
  */
 package View;
 
-import java.awt.Button;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import javax.swing.JButton;
 
 /**
@@ -31,423 +31,249 @@ public class Register extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel13 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        judulLbl = new javax.swing.JLabel();
+        tfId = new javax.swing.JTextField();
+        tfNama = new javax.swing.JTextField();
+        rbPr = new javax.swing.JRadioButton();
+        rbLk = new javax.swing.JRadioButton();
+        tfTempatLahir = new javax.swing.JTextField();
+        dcTtl = new datechooser.beans.DateChooserCombo();
+        tfAlamat = new javax.swing.JTextField();
+        tfTelepon = new javax.swing.JTextField();
+        tfUsername = new javax.swing.JTextField();
+        tfPassword = new javax.swing.JTextField();
+        jbRegister = new javax.swing.JButton();
+        masukLbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(240, 236, 236));
         setIconImages(null);
         setMinimumSize(new java.awt.Dimension(600, 500));
+        setModalExclusionType(java.awt.Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel13.setText("APOTEK SEHAT");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, -1, -1));
+        judulLbl.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        judulLbl.setText("APOTEK SEHAT");
+        getContentPane().add(judulLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, -1, -1));
 
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("Password");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        tfId.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfId.setText("ID");
+        tfId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                tfIdActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 470, 380, 60));
+        getContentPane().add(tfId, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 380, 40));
 
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField2.setText("Alamat");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        tfNama.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfNama.setText("Nama");
+        tfNama.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                tfNamaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, 380, 60));
+        getContentPane().add(tfNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 380, 40));
 
-        jButton1.setText("Register");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 540, 380, 40));
+        rbPr.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        rbPr.setText("Perempuan");
+        rbPr.setPreferredSize(new java.awt.Dimension(113, 40));
+        getContentPane().add(rbPr, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 150, 50));
 
-        jLabel2.setText("Masuk");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 590, -1, -1));
-
-        jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField3.setText("Nama");
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        rbLk.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        rbLk.setText("Laki-laki");
+        rbLk.setPreferredSize(new java.awt.Dimension(150, 40));
+        rbLk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                rbLkActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 380, 60));
+        getContentPane().add(rbLk, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 210, 120, 50));
 
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField4.setText("Username");
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        tfTempatLahir.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfTempatLahir.setText("Tempat Lahir");
+        tfTempatLahir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                tfTempatLahirActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 380, 60));
+        getContentPane().add(tfTempatLahir, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 380, 40));
 
-        jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField5.setText("Telepon");
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        dcTtl.setLocale(new java.util.Locale("in", "", ""));
+        getContentPane().add(dcTtl, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 380, 40));
+
+        tfAlamat.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfAlamat.setText("Alamat");
+        tfAlamat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                tfAlamatActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 330, 380, 60));
+        getContentPane().add(tfAlamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 370, 380, 40));
 
-        jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField6.setText("Jabatan");
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        tfTelepon.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfTelepon.setText("Telepon");
+        tfTelepon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                tfTeleponActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 400, 380, 60));
+        getContentPane().add(tfTelepon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 420, 380, 40));
+
+        tfUsername.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfUsername.setText("Username");
+        getContentPane().add(tfUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 470, 380, 40));
+
+        tfPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfPassword.setText("Password");
+        getContentPane().add(tfPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 520, 380, 40));
+
+        jbRegister.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jbRegister.setText("Register");
+        getContentPane().add(jbRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 580, 380, 40));
+
+        masukLbl.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        masukLbl.setText("Masuk");
+        masukLbl.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(masukLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 630, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void tfTempatLahirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfTempatLahirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_tfTempatLahirActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void tfNamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNamaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_tfNamaActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void tfTeleponActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfTeleponActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_tfTeleponActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void tfAlamatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAlamatActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_tfAlamatActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void tfIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfIdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_tfIdActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void rbLkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbLkActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_rbLkActionPerformed
 
-     public void setActionListener(ActionListener a){
-//        btnSimpan.addActionListener(a);
+    public void setActionListener(ActionListener a){
+       jbRegister.addActionListener(a);
 //        btnBatal.addActionListener(a);
     }
     
-   
-   
-    
-   
-
-    
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Register().setVisible(true);
-            }
-        });
+    public void addMouseAdapter(MouseAdapter e){
+        masukLbl.addMouseListener(e);
+        
     }
+    
+   public String getID(){
+        String s = tfId.getText();
+        return s;
+   }
+      
+   public String getNama(){
+        String s = tfNama.getText();
+        return s;
+   }
+   
+   public String getJenisKelamin(){
+        if (rbLk.isSelected()){
+            return "L";
+        }else{
+            return "P";
+        }
+   }
+   
+    public String getTempatLahir(){
+        String s = tfTempatLahir.getText();
+        return s;
+    }
+    
+    public String getTglLahir(){
+        java.text.SimpleDateFormat kal = new java.text.SimpleDateFormat ("yyyy-MM-dd");
+        dcTtl.setDateFormat(kal);
+        return dcTtl.getText();
+    }
+    
+    public String getAlamat(){
+        String s = tfAlamat.getText();
+        return s;
+    }
+     
+    public String getTelepon(){
+        String s = tfTelepon.getText();
+        return s;
+    }
+    
+    public String getUsername(){
+        String s = tfUsername.getText();
+        return s;
+    }
+    
+    public String getPass(){
+        String s = tfPassword.getText();
+        return s;
+    }
+    
+    public JButton getRegister(){
+        return jbRegister;
+    }
+//    /**
+//     * @param args the command line arguments
+//     */
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(Register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(Register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(Register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(Register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new Register().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private datechooser.beans.DateChooserCombo dcTtl;
+    private javax.swing.JButton jbRegister;
+    private javax.swing.JLabel judulLbl;
+    private javax.swing.JLabel masukLbl;
+    private javax.swing.JRadioButton rbLk;
+    private javax.swing.JRadioButton rbPr;
+    private javax.swing.JTextField tfAlamat;
+    private javax.swing.JTextField tfId;
+    private javax.swing.JTextField tfNama;
+    private javax.swing.JTextField tfPassword;
+    private javax.swing.JTextField tfTelepon;
+    private javax.swing.JTextField tfTempatLahir;
+    private javax.swing.JTextField tfUsername;
     // End of variables declaration//GEN-END:variables
 }
