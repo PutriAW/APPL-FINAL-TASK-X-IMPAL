@@ -5,7 +5,7 @@
  */
 package Driver;
 
-import Controller.ControllerPemesanan;
+import Controller.*;
 import Database.Database;
 
 /**
@@ -15,6 +15,7 @@ import Database.Database;
 public class Driver {
     public static void main(String[] args) {
         Database apotek = null;
-        ControllerPemesanan cp = new ControllerPemesanan(apotek);
+//        ControllerPemesanan cp = new ControllerPemesanan(apotek);
+        ControllerLogin lg= new  ControllerLogin(apotek);
     }
 }
