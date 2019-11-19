@@ -43,7 +43,7 @@ public class PembayaranModelTest {
     @Test
     public void testSetIdPembayaran() {
         System.out.println("setIdPembayaran");
-        String idPembayaran = "";
+        String idPembayaran = "PMB0014";
         PembayaranModel instance = new PembayaranModel("PMB0014","PMS0014","KSR0003","2019-11-19",200000);
         instance.setIdPembayaran(idPembayaran);
         // TODO review the generated test code and remove the default call to fail.
@@ -56,7 +56,7 @@ public class PembayaranModelTest {
     @Test
     public void testSetTotal() {
         System.out.println("setTotal");
-        int total = 0;
+        int total = 200000;
         PembayaranModel instance = new PembayaranModel("PMB0014","PMS0014","KSR0003","2019-11-19",200000);
         instance.setTotal(total);
         // TODO review the generated test code and remove the default call to fail.
@@ -69,11 +69,11 @@ public class PembayaranModelTest {
     @Test
     public void testSetTglPmbyr() {
         System.out.println("setTglPmbyr");
-        String tglPmbyr = "";
-        PembayaranModel instance = null;
+        String tglPmbyr = "2019-11-19";
+        PembayaranModel instance = new PembayaranModel("PMB0014","PMS0014","KSR0003","2019-11-19",200000);
         instance.setTglPmbyr(tglPmbyr);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+//        fail("The test case is a prototype.");
     }
 
     /**
@@ -82,11 +82,11 @@ public class PembayaranModelTest {
     @Test
     public void testSetIdPemesanan() {
         System.out.println("setIdPemesanan");
-        String idPemesanan = "";
+        String idPemesanan = "PMS0014";
         PembayaranModel instance = new PembayaranModel("PMB0014","PMS0014","KSR0003","2019-11-19",200000);
         instance.setIdPemesanan(idPemesanan);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+//        fail("The test case is a prototype.");
     }
 
     /**
@@ -95,11 +95,11 @@ public class PembayaranModelTest {
     @Test
     public void testSetIdKasir() {
         System.out.println("setIdKasir");
-        String idKasir = "";
+        String idKasir = "KSR0003";
         PembayaranModel instance = new PembayaranModel("PMB0014","PMS0014","KSR0003","2019-11-19",200000);
         instance.setIdKasir(idKasir);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+//        fail("The test case is a prototype.");
     }
 
     /**
@@ -109,11 +109,11 @@ public class PembayaranModelTest {
     public void testGetIdPembayaran() {
         System.out.println("getIdPembayaran");
         PembayaranModel instance = new PembayaranModel("PMB0014","PMS0014","KSR0003","2019-11-19",200000);;
-        String expResult = "";
+        String expResult = "PMB0014";
         String result = instance.getIdPembayaran();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+//        fail("The test case is a prototype.");
     }
 
     /**
@@ -123,11 +123,11 @@ public class PembayaranModelTest {
     public void testGetIdPemesanan() {
         System.out.println("getIdPemesanan");
         PembayaranModel instance = new PembayaranModel("PMB0014","PMS0014","KSR0003","2019-11-19",200000);
-        String expResult = "";
+        String expResult = "PMS0014";
         String result = instance.getIdPemesanan();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+//        fail("The test case is a prototype.");
     }
 
     /**
@@ -137,11 +137,11 @@ public class PembayaranModelTest {
     public void testGetIdKasir() {
         System.out.println("getIdKasir");
         PembayaranModel instance = new PembayaranModel("PMB0014","PMS0014","KSR0003","2019-11-19",200000);
-        String expResult = "";
+        String expResult = "KSR0003";
         String result = instance.getIdKasir();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+//        fail("The test case is a prototype.");
     }
 
     /**
@@ -151,11 +151,11 @@ public class PembayaranModelTest {
     public void testGetTotal() {
         System.out.println("getTotal");
         PembayaranModel instance = new PembayaranModel("PMB0014","PMS0014","KSR0003","2019-11-19",200000);
-        int expResult = 0;
+        int expResult = 200000;
         int result = instance.getTotal();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+//        fail("The test case is a prototype.");
     }
 
     /**
@@ -165,11 +165,11 @@ public class PembayaranModelTest {
     public void testGetTglPmbyr() {
         System.out.println("getTglPmbyr");
         PembayaranModel instance = new PembayaranModel("PMB0014","PMS0014","KSR0003","2019-11-19",200000);
-        String expResult = "";
+        String expResult = "2019-11-19";
         String result = instance.getTglPmbyr();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+//        fail("The test case is a prototype.");
     }
     
 }
