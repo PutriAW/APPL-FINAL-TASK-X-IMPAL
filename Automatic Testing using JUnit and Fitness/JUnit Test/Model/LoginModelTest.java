@@ -43,12 +43,10 @@ public class LoginModelTest {
     @Test
     public void testGetUsername() {
         System.out.println("getUsername");
-        LoginModel instance = new LoginModel();
-        String expResult = "";
+        LoginModel instance = new LoginModel("PutriCan","mercyOnMe");
+        String expResult = "PutriCan";
         String result = instance.getUsername();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -58,10 +56,8 @@ public class LoginModelTest {
     public void testSetUsername() {
         System.out.println("setUsername");
         String username = "";
-        LoginModel instance = new LoginModel();
+        LoginModel instance = new LoginModel("PutriCan","mercyOnMe");
         instance.setUsername(username);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -70,12 +66,11 @@ public class LoginModelTest {
     @Test
     public void testGetPassword() {
         System.out.println("getPassword");
-        LoginModel instance = new LoginModel();
-        String expResult = "";
+        LoginModel instance = new LoginModel("PutriCan","mercyOnMe");
+        String expResult = "mercyOnMe";
         String result = instance.getPassword();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      
     }
 
     /**
@@ -85,10 +80,8 @@ public class LoginModelTest {
     public void testSetPassword() {
         System.out.println("setPassword");
         String password = "";
-        LoginModel instance = new LoginModel();
+        LoginModel instance = new LoginModel("PutriCan","mercyOnMe");
         instance.setPassword(password);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }
