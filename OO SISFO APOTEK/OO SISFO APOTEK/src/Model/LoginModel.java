@@ -17,10 +17,7 @@ public class LoginModel {
         this.username = username;
         this.password = password;
     }
-    public LoginModel() {
-         //To change body of generated methods, choose Tools | Templates.
-    }
-
+   
     public String getUsername() {
         return username;
     }
