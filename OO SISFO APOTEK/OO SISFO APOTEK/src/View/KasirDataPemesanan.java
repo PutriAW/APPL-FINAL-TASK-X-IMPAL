@@ -116,18 +116,15 @@ public class KasirDataPemesanan extends javax.swing.JFrame {
         getContentPane().add(tfCari, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 90, 190, 30));
 
         tambahLbl.setIcon(new javax.swing.ImageIcon("E:\\files\\Teknik Informatika\\semester 5\\IMPAL\\OO SISFO APOTEK\\Aset\\Tambahh.png")); // NOI18N
+        tambahLbl.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(tambahLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(845, 85, 30, 40));
 
         cariLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/search (1).png"))); // NOI18N
+        cariLbl.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(cariLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 90, 30, 30));
 
         tabPemesanan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
                 {null, null, null},
                 {null, null, null},
                 {null, null, null},
@@ -197,7 +194,7 @@ public class KasirDataPemesanan extends javax.swing.JFrame {
         jbEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/editt.png"))); // NOI18N
         jbEdit.setText("Edit");
         jbEdit.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        getContentPane().add(jbEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 400, 70, 40));
+        getContentPane().add(jbEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 400, 90, 40));
 
         jbHapus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/Hapuss.png"))); // NOI18N
         jbHapus.setText("Hapus");
@@ -241,6 +238,10 @@ public class KasirDataPemesanan extends javax.swing.JFrame {
         return cariLbl;
     }
     
+    public JLabel getTambah() {
+        return tambahLbl;
+    }
+  
     public String getSearch() {
         return tfCari.getText();
     }
@@ -272,6 +273,24 @@ public class KasirDataPemesanan extends javax.swing.JFrame {
     public JButton getBtnDasboad(){
         return jbDashboard;
     }
+    
+    public JButton getBtnPemesanan(){
+        return jbPemesanan;
+    }
+    
+    public JButton getBtnPembayaran(){
+        return jbPembayaran;
+    }
+    
+     public JButton getBtnEdit(){
+        return jbEdit;
+    } 
+    
+    public JButton getBtnHapus(){
+        return jbHapus;
+    } 
+    
+    
     
     
     

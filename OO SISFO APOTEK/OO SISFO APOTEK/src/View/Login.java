@@ -32,8 +32,8 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         judulLbl = new javax.swing.JLabel();
-        tfPassword = new javax.swing.JTextField();
         tfUsername = new javax.swing.JTextField();
+        tfPassword = new javax.swing.JPasswordField();
         btnLogin = new javax.swing.JButton();
         masukSbgLbl = new javax.swing.JLabel();
         cbUser = new javax.swing.JComboBox<>();
@@ -42,29 +42,32 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(240, 236, 236));
         setIconImages(null);
-        setMinimumSize(new java.awt.Dimension(600, 500));
+        setMinimumSize(new java.awt.Dimension(850, 700));
+        setModalExclusionType(java.awt.Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
+        setPreferredSize(new java.awt.Dimension(850, 700));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         judulLbl.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         judulLbl.setText("APOTEK SEHAT");
         getContentPane().add(judulLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, -1, -1));
 
-        tfPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        tfPassword.setText("PASSWORD");
-        getContentPane().add(tfPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, 380, 60));
-
         tfUsername.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfUsername.setText("USERNAME");
         getContentPane().add(tfUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, 380, 60));
 
+        tfPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfPassword.setText("jPasswordField1");
+        getContentPane().add(tfPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, 380, 60));
+
         btnLogin.setText("LOG IN");
+        btnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 470, 380, 40));
 
         masukSbgLbl.setText("Masuk sebagai");
         getContentPane().add(masukSbgLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 520, -1, -1));
 
         cbUser.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apoteker", "Kasir", "Pendata", "Manager" }));
-        getContentPane().add(cbUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 540, 70, -1));
+        getContentPane().add(cbUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 540, 100, 30));
 
         haloUserLbl.setText("HALO USER!");
         getContentPane().add(haloUserLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, -1, -1));
@@ -116,7 +119,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel haloUserLbl;
     private javax.swing.JLabel judulLbl;
     private javax.swing.JLabel masukSbgLbl;
-    private javax.swing.JTextField tfPassword;
+    private javax.swing.JPasswordField tfPassword;
     private javax.swing.JTextField tfUsername;
     // End of variables declaration//GEN-END:variables
 }

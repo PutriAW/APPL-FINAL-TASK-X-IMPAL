@@ -257,6 +257,10 @@ public class PendataDataObat extends javax.swing.JFrame {
         return pdtPnl;
     }
     
+    public JLabel getTambah() {
+        return tambahLbl;
+    }
+    
     public JLabel getLblCari() {
         return cariLbl;
     }
@@ -300,7 +304,14 @@ public class PendataDataObat extends javax.swing.JFrame {
     public JButton getBtnDasboard(){
         return jbDashboard;
     } 
+
+    public JButton getBtnEdit(){
+        return jbEdit;
+    } 
     
+    public JButton getBtnHapus(){
+        return jbHapus;
+    }
 //    /**
 //     * @param args the command line arguments
 //     */

@@ -14,12 +14,12 @@ import javax.swing.JTextArea;
  *
  * @author PUTRI
  */
-public class EditResepObat extends javax.swing.JFrame {
+public class InputDataSuplier extends javax.swing.JFrame {
 
     /**
      * Creates new form Supplier
      */
-    public EditResepObat() {
+    public InputDataSuplier() {
         initComponents();
     }
 
@@ -33,17 +33,16 @@ public class EditResepObat extends javax.swing.JFrame {
     private void initComponents() {
 
         pmsPnl = new javax.swing.JPanel();
-        aptIdLbl = new javax.swing.JLabel();
-        tglLbl = new javax.swing.JLabel();
-        totalLbl = new javax.swing.JLabel();
-        tfId2 = new javax.swing.JTextField();
-        dcPms = new datechooser.beans.DateChooserCombo();
+        NamaLbl = new javax.swing.JLabel();
+        alamatLbl = new javax.swing.JLabel();
+        tlpLbl = new javax.swing.JLabel();
+        tfTlp = new javax.swing.JTextField();
         btnSimpan = new java.awt.Button();
         btnBatal = new java.awt.Button();
-        tfId1 = new javax.swing.JTextField();
-        rspIdLbl1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTDeskripsi = new javax.swing.JTextArea();
+        tfId = new javax.swing.JTextField();
+        idSupLbl = new javax.swing.JLabel();
+        tfAlamat = new javax.swing.JTextField();
+        tfNama = new javax.swing.JTextField();
         judulLbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -57,23 +56,20 @@ public class EditResepObat extends javax.swing.JFrame {
         pmsPnl.setPreferredSize(new java.awt.Dimension(500, 350));
         pmsPnl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        aptIdLbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        aptIdLbl.setText("Id_Apoteker");
-        pmsPnl.add(aptIdLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, -1));
+        NamaLbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NamaLbl.setText("Nama");
+        pmsPnl.add(NamaLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, -1));
 
-        tglLbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        tglLbl.setText("Tanggal Resep");
-        pmsPnl.add(tglLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
+        alamatLbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        alamatLbl.setText("Alamat");
+        pmsPnl.add(alamatLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
 
-        totalLbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        totalLbl.setText("Deskripsi");
-        pmsPnl.add(totalLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
+        tlpLbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        tlpLbl.setText("Telepon");
+        pmsPnl.add(tlpLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
 
-        tfId2.setForeground(new java.awt.Color(204, 204, 204));
-        tfId2.setText("Default");
-        tfId2.setMinimumSize(new java.awt.Dimension(6, 30));
-        pmsPnl.add(tfId2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 460, 35));
-        pmsPnl.add(dcPms, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 460, 35));
+        tfTlp.setMinimumSize(new java.awt.Dimension(6, 30));
+        pmsPnl.add(tfTlp, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 460, 35));
 
         btnSimpan.setBackground(new java.awt.Color(86, 204, 242));
         btnSimpan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -88,38 +84,36 @@ public class EditResepObat extends javax.swing.JFrame {
         btnBatal.setPreferredSize(new java.awt.Dimension(100, 30));
         pmsPnl.add(btnBatal, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 500, -1, -1));
 
-        tfId1.setForeground(new java.awt.Color(204, 204, 204));
-        tfId1.setText("Default");
-        tfId1.setMinimumSize(new java.awt.Dimension(6, 30));
-        tfId1.addActionListener(new java.awt.event.ActionListener() {
+        tfId.setMinimumSize(new java.awt.Dimension(6, 30));
+        tfId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfId1ActionPerformed(evt);
+                tfIdActionPerformed(evt);
             }
         });
-        pmsPnl.add(tfId1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 460, 35));
+        pmsPnl.add(tfId, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 460, 35));
 
-        rspIdLbl1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        rspIdLbl1.setText("Id_Resep");
-        pmsPnl.add(rspIdLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
+        idSupLbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        idSupLbl.setText("Id_Suplier");
+        pmsPnl.add(idSupLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
 
-        jTDeskripsi.setColumns(20);
-        jTDeskripsi.setRows(5);
-        jScrollPane1.setViewportView(jTDeskripsi);
+        tfAlamat.setMinimumSize(new java.awt.Dimension(6, 30));
+        pmsPnl.add(tfAlamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 460, 35));
 
-        pmsPnl.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 460, 230));
+        tfNama.setMinimumSize(new java.awt.Dimension(6, 30));
+        pmsPnl.add(tfNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 460, 35));
 
         getContentPane().add(pmsPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 95, 780, 570));
 
         judulLbl.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        judulLbl.setText("Edit Resep Obat");
-        getContentPane().add(judulLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, -1, -1));
+        judulLbl.setText("Tambah Data Suplier");
+        getContentPane().add(judulLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 290, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tfId1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfId1ActionPerformed
+    private void tfIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfIdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfId1ActionPerformed
+    }//GEN-LAST:event_tfIdActionPerformed
     
     public void setActionListener(ActionListener a){
         btnSimpan.addActionListener(a);
@@ -135,20 +129,21 @@ public class EditResepObat extends javax.swing.JFrame {
     }
     
     public String getID(){
-        return tfId1.getText();
-    }
-
-     public String getTglEditRsp(){
-        java.text.SimpleDateFormat kal = new java.text.SimpleDateFormat ("yyyy-MM-dd");
-        dcPms.setDateFormat(kal);
-        return dcPms.getText();
+        return tfId.getText();
     }
     
-    public JTextArea getDeskripsi(){
-        return jTDeskripsi;
+    public String getNama(){
+        return tfAlamat.getText();
+    }
+    
+    public String getAlamat(){
+        return tfAlamat.getText();
+    }
+    
+    public String getTelepon(){
+        return tfTlp.getText();
     }
      
-    
 //    /**
 //     * @param args the command line arguments
 //     */
@@ -166,13 +161,13 @@ public class EditResepObat extends javax.swing.JFrame {
 //                }
 //            }
 //        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(EditResepObat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(InputResepObat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(EditResepObat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(InputResepObat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(EditResepObat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(InputResepObat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(EditResepObat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(InputResepObat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        }
 //        //</editor-fold>
 //        //</editor-fold>
@@ -180,24 +175,23 @@ public class EditResepObat extends javax.swing.JFrame {
 //        /* Create and display the form */
 //        java.awt.EventQueue.invokeLater(new Runnable() {
 //            public void run() {
-//                new EditResepObat().setVisible(true);
+//                new InputResepObat().setVisible(true);
 //            }
 //        });
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel aptIdLbl;
+    private javax.swing.JLabel NamaLbl;
+    private javax.swing.JLabel alamatLbl;
     private java.awt.Button btnBatal;
     private java.awt.Button btnSimpan;
-    private datechooser.beans.DateChooserCombo dcPms;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTDeskripsi;
+    private javax.swing.JLabel idSupLbl;
     private javax.swing.JLabel judulLbl;
     private javax.swing.JPanel pmsPnl;
-    private javax.swing.JLabel rspIdLbl1;
-    private javax.swing.JTextField tfId1;
-    private javax.swing.JTextField tfId2;
-    private javax.swing.JLabel tglLbl;
-    private javax.swing.JLabel totalLbl;
+    private javax.swing.JTextField tfAlamat;
+    private javax.swing.JTextField tfId;
+    private javax.swing.JTextField tfNama;
+    private javax.swing.JTextField tfTlp;
+    private javax.swing.JLabel tlpLbl;
     // End of variables declaration//GEN-END:variables
 }
