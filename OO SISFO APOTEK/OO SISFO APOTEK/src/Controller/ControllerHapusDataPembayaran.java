@@ -6,33 +6,30 @@
 package Controller;
 
 import Database.Database;
-import View.DashboardKasir;
-import View.KasirDataPemesanan;
+import View.HapusDataPembayaran;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author PUTRI
  */
-public class ControllerDashboardKasir extends MouseAdapter implements ActionListener{
-    private DashboardKasir view;
+public class ControllerHapusDataPembayaran implements ActionListener{
+    private HapusDataPembayaran view;
     private Database db;
 
-    public ControllerDashboardKasir( Database db) {
-        this.view = new DashboardKasir();
+    public ControllerHapusDataPembayaran( Database db) {
+        this.view = new HapusDataPembayaran();
         view.setActionListener(this);
         view.setVisible(true);
         view.setLocationRelativeTo(null);
         this.db = db;
     }
+    
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -42,20 +39,22 @@ public class ControllerDashboardKasir extends MouseAdapter implements ActionList
         try {
             db = new Database();
         } catch (SQLException ex) {
-            Logger.getLogger(ControllerDashboardKasir.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ControllerHapusDataPembayaran.class.getName()).log(Level.SEVERE, null, ex);
         }
-        //eksekusi button
-        if (click.equals(view.getBtnKeluar())) {
-            view.dispose();
-        }else if (click.equals(view.getBtnPembayaran())) {
-            view.dispose();
-            new ControllerKasirDataPembayaran(db);
-        }else if (click.equals(view.getBtnPemesanan())) {
-            view.dispose();
-            new ControllerKasirDataPemesanan(db);
+        //eksekusi button 
+        try{
+           if (click.equals(view.getBtnCari())){
+                db.HapusDataPembayaran(view);
+                view.dispose(); 
+                new ControllerKasirDataPembayaran(db);
+            }else if (click.equals(view.getBtnBatal())){
+                view.dispose(); 
+                new ControllerKasirDataPembayaran(db);
+            }
+        }catch(SQLException ae){
+            JOptionPane.showMessageDialog(view, "Error input","", JOptionPane.ERROR_MESSAGE); 
         }
-       
        
     }
-       
+    
 }

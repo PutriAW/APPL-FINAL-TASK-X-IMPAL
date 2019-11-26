@@ -6,33 +6,34 @@
 package Controller;
 
 import Database.Database;
-import View.DashboardKasir;
-import View.KasirDataPemesanan;
+import Model.PemesananModel;
+import View.EditResepObat;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author PUTRI
  */
-public class ControllerDashboardKasir extends MouseAdapter implements ActionListener{
-    private DashboardKasir view;
+public class ControllerEditDataSupplier implements ActionListener{
+    private EditResepObat view;
     private Database db;
 
-    public ControllerDashboardKasir( Database db) {
-        this.view = new DashboardKasir();
+    public ControllerEditDataSupplier( Database db) {
+        this.view = new EditResepObat();
         view.setActionListener(this);
         view.setVisible(true);
         view.setLocationRelativeTo(null);
         this.db = db;
     }
+    
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -42,20 +43,19 @@ public class ControllerDashboardKasir extends MouseAdapter implements ActionList
         try {
             db = new Database();
         } catch (SQLException ex) {
-            Logger.getLogger(ControllerDashboardKasir.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ControllerEditDataSupplier.class.getName()).log(Level.SEVERE, null, ex);
         }
         //eksekusi button
-        if (click.equals(view.getBtnKeluar())) {
+        if (click.equals(view.getBtnSimpan())) {
+           // PemesananModel p = new PemesananModel(view.getID(), view.getTotal(), view.getTglPesan());
+            
+            // db.saveDataPemesanan(p);
+            new ControllerEditDataSupplier(db);
             view.dispose();
-        }else if (click.equals(view.getBtnPembayaran())) {
-            view.dispose();
-            new ControllerKasirDataPembayaran(db);
-        }else if (click.equals(view.getBtnPemesanan())) {
-            view.dispose();
-            new ControllerKasirDataPemesanan(db);
+        } else if (click.equals(view.getBtnBatal())){
+            view.dispose(); 
         }
        
-       
     }
-       
+    
 }

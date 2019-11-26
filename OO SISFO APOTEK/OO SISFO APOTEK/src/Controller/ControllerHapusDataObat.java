@@ -6,9 +6,9 @@
 package Controller;
 
 import Database.Database;
+import Model.PembayaranModel;
 import Model.PemesananModel;
-import View.InputResepObat;
-import View.InputDataPemesanan;
+import View.InputDataPembayaran;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -23,12 +23,12 @@ import javax.swing.JOptionPane;
  *
  * @author PUTRI
  */
-public class ControllerInputResepObat implements ActionListener{
-    private InputResepObat view;
+public class ControllerHapusDataObat implements ActionListener{
+    private InputDataPembayaran view;
     private Database db;
 
-    public ControllerInputResepObat( Database db) {
-        this.view = new InputResepObat();
+    public ControllerHapusDataObat( Database db) {
+        this.view = new InputDataPembayaran();
         view.setActionListener(this);
         view.setVisible(true);
         view.setLocationRelativeTo(null);
@@ -44,17 +44,21 @@ public class ControllerInputResepObat implements ActionListener{
         try {
             db = new Database();
         } catch (SQLException ex) {
-            Logger.getLogger(ControllerInputResepObat.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ControllerHapusDataObat.class.getName()).log(Level.SEVERE, null, ex);
         }
-        //eksekusi button
-        if (click.equals(view.getBtnSimpan())) {
-    //        PemesananModel p = new PemesananModel(view.getID(), view.getTotal(), view.getTglPesan());
-            
-            //               db.saveDataPemesanan(p);
-            new ControllerInputResepObat(db);
-            view.dispose();
-        } else if (click.equals(view.getBtnBatal())){
-            view.dispose(); 
+        //eksekusi button 
+        try{
+            if (click.equals(view.getBtnSimpan())){
+                PembayaranModel p = new PembayaranModel(view.getIDPmb(),view.getIDPms(),view.getIDKsr(), view.getTglPembayaran(), view.getTotal());
+                db.saveDataPembayaran(p);
+                view.dispose(); 
+                new ControllerKasirDataPembayaran(db);
+            }else if (click.equals(view.getBtnBatal())){
+                view.dispose(); 
+                new ControllerKasirDataPembayaran(db);
+            }
+        }catch(SQLException ae){
+            JOptionPane.showMessageDialog(view, "Error input","", JOptionPane.ERROR_MESSAGE); 
         }
        
     }

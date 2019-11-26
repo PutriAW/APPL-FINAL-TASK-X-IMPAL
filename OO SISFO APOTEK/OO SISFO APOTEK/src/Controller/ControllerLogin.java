@@ -7,7 +7,6 @@ package Controller;
 
 import Database.Database;
 import Model.LoginModel;
-import Model.PemesananModel;
 import View.Login;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,6 +25,7 @@ public class ControllerLogin implements ActionListener{
 
     public ControllerLogin( Database db) {
         this.view = new Login();
+        view.setActionListener(this);
         view.setVisible(true);
         view.setLocationRelativeTo(null);
         this.db = db;
@@ -45,18 +45,19 @@ public class ControllerLogin implements ActionListener{
         //eksekusi button
         if (click.equals(view.getBtnLogin())) {
            LoginModel l = new LoginModel(view.getUsername(), view.getPassword());
+//            System.out.println(view.getUser());
             try {
-                if (db.loginUser(l)){
-                    if(view.getUser().equals("kasir")){
+                if (db.loginUser(l, view)){
+                    if(view.getUser().equals("Kasir")){
                         view.dispose();
                         new ControllerDashboardKasir(db);
-                    }else if(view.getUser().equals("pendata")){
+                    }else if(view.getUser().equals("Pendata")){
                         view.dispose();
                         new ControllerPendataDataObat(db);
-                    }else if(view.getUser().equals("apoteker")){
+                    }else if(view.getUser().equals("Apoteker")){
                         view.dispose();
                         new ControllerApotekerResepObat(db);
-                    }else if(view.getUser().equals("manager")){
+                    }else if(view.getUser().equals("Manager")){
                         view.dispose();   
                         new ControllerManagerDataKaryawan(db);
                     }

@@ -9,8 +9,8 @@ import Database.Database;
 import View.PendataDataSuplier;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  *
  * @author PUTRI
  */
-public class ControllerPendataDataSuplier implements ActionListener, KeyListener{
+public class ControllerPendataDataSuplier extends MouseAdapter implements ActionListener{
     private PendataDataSuplier view;
     private Database db;
 
@@ -44,38 +44,41 @@ public class ControllerPendataDataSuplier implements ActionListener, KeyListener
         //eksekusi button
         if (click.equals(view.getBtnKeluar())) {
             view.dispose();
-        } else {
-            //      db.viewDataPemesanan(view);
-
+        }else if (click.equals(view.getBtnObat())) {
+            view.dispose();
+            ControllerPendataDataObat controllerPendataDataObat = new ControllerPendataDataObat(db);
+        }else if (click.equals(view.getBtnSuplier())){
+            view.dispose();
+            new ControllerPendataDataSuplier(db);   
+        }else if (click.equals(view.getBtnEdit())){
+            view.dispose();
+        }else if (click.equals(view.getBtnHapus())){
+            view.dispose();
+        }else{
+            try {
+                db.viewDataSupplier(view);
+            } catch (SQLException ex) {
+                Logger.getLogger(ControllerKasirDataPemesanan.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
        
     }
 
     @Override
-    public void keyPressed(KeyEvent k) {
-        Database db = null;
-        try {
-            db = new Database();
-        } catch (SQLException ex) {
-            Logger.getLogger(ControllerPendataDataSuplier.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    public void mouseClicked(MouseEvent me){
+        Object click = me.getSource();
         
-        // eksekusi key 
-        if (k.getKeyCode()==KeyEvent.VK_ENTER){
-            //        db.cariDataPemesanan(view);
-
+        if(click.equals(view.getLblCari())){
+            try {
+                db.cariDataSupplier(view);
+            } catch (SQLException ex) {
+                Logger.getLogger(ControllerKasirDataPembayaran.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else if(click.equals(view.getTambah())){
+            view.dispose();
+            new ControllerInputDataSupplier(db);
         }
+            
     }
-
-    @Override
-    public void keyTyped(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
        
 }
