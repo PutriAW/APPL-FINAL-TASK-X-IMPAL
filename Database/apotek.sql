@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Sep 2019 pada 04.35
+-- Waktu pembuatan: 12 Des 2019 pada 16.16
 -- Versi server: 10.1.37-MariaDB
 -- Versi PHP: 7.2.12
 
@@ -35,24 +35,26 @@ CREATE TABLE `apoteker` (
   `tempat_lahir` varchar(20) NOT NULL,
   `tgl_lahir` date NOT NULL,
   `alamat` varchar(60) NOT NULL,
-  `no_hp` varchar(13) NOT NULL
+  `no_hp` varchar(13) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `Password` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `apoteker`
 --
 
-INSERT INTO `apoteker` (`id_apoteker`, `nama`, `jenis_kelamin`, `tempat_lahir`, `tgl_lahir`, `alamat`, `no_hp`) VALUES
-('APT0001', 'Inaayah Guzman', 'P', 'Kalimantan', '1992-03-01', 'Jalan Alpine RT.01 RW.03', '089876500841'),
-('APT0002', 'Malak Gonzales', 'L', 'Pekanbaru', '1989-05-11', 'Jalan Angsa RT.04 RW.21', '082362155334'),
-('APT0003', 'Margot Bender', 'L', 'Jakarta', '1987-10-10', 'Jalan Anis RT.01 RW.05', '089876504131'),
-('APT0004', 'Angelo Fuller', 'P', 'Bandung', '1993-07-23', 'Jalan Apung RT.04 RW.21', '087845365426'),
-('APT0005', 'Yolanda Sheridan', 'P', 'Yogyakarta', '1989-08-03', 'Jalan Asi RT.07 RW.12', '081377063005'),
-('APT0006', 'Christian Sheldon', 'P', 'Bekasi', '1985-07-20', 'Jalan Astrapia RT.04 RW.21', '085234465788'),
-('APT0007', 'Constance Fountain', 'L', 'Semarang', '1980-07-09', 'Jalan Atoku RT.01 RW.05', '089587293567'),
-('APT0008', 'Shah Knox', 'L', 'Depok', '1990-10-20', 'Jalan Bangau RT.03 RW.03', '081376666388'),
-('APT0009', 'Farhana Spears', 'L', 'Sragen', '1993-11-05', 'Jalan Baza RT.07 RW.20', '082155467363'),
-('APT0010', 'Farhan kurs', 'L', 'Bandung', '1994-06-06', 'Jalan Belibis RT.03 RW.02', '085346662541');
+INSERT INTO `apoteker` (`id_apoteker`, `nama`, `jenis_kelamin`, `tempat_lahir`, `tgl_lahir`, `alamat`, `no_hp`, `username`, `Password`) VALUES
+('APT0001', 'Inaayah Guzman', 'P', 'Kalimantan', '1992-03-01', 'Jalan Alpine RT.01 RW.03', '089876500841', 'gon12', '123'),
+('APT0002', 'Malak Gonzales', 'L', 'Pekanbaru', '1989-05-11', 'Jalan Angsa RT.04 RW.21', '082362155334', '', ''),
+('APT0003', 'Margot Bender', 'L', 'Jakarta', '1987-10-10', 'Jalan Anis RT.01 RW.05', '089876504131', '', ''),
+('APT0004', 'Angelo Fuller', 'P', 'Bandung', '1993-07-23', 'Jalan Apung RT.04 RW.21', '087845365426', '', ''),
+('APT0005', 'Yolanda Sheridan', 'P', 'Yogyakarta', '1989-08-03', 'Jalan Asi RT.07 RW.12', '081377063005', '', ''),
+('APT0006', 'Christian Sheldon', 'P', 'Bekasi', '1985-07-20', 'Jalan Astrapia RT.04 RW.21', '085234465788', '', ''),
+('APT0007', 'Constance Fountain', 'L', 'Semarang', '1980-07-09', 'Jalan Atoku RT.01 RW.05', '089587293567', '', ''),
+('APT0008', 'Shah Knox', 'L', 'Depok', '1990-10-20', 'Jalan Bangau RT.03 RW.03', '081376666388', '', ''),
+('APT0009', 'Farhana Spears', 'L', 'Sragen', '1993-11-05', 'Jalan Baza RT.07 RW.20', '082155467363', '', ''),
+('APT0010', 'Farhan kurs', 'L', 'Bandung', '1994-06-06', 'Jalan Belibis RT.03 RW.02', '085346662541', '', '');
 
 -- --------------------------------------------------------
 
@@ -67,24 +69,26 @@ CREATE TABLE `kasir` (
   `tempat_lahir` varchar(20) NOT NULL,
   `tgl_lahir` date NOT NULL,
   `alamat` varchar(60) NOT NULL,
-  `no_hp` varchar(13) NOT NULL
+  `no_hp` varchar(13) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `kasir`
 --
 
-INSERT INTO `kasir` (`id_kasir`, `nama`, `jenis_kelamin`, `tempat_lahir`, `tgl_lahir`, `alamat`, `no_hp`) VALUES
-('KSR0001', 'Ardhia', 'P', 'tasik', '1999-10-16', 'bandung', '085223123400'),
-('KSR0002', 'Fitroh', 'L', 'Medan', '1996-12-12', 'jakarta', '085223123500'),
-('KSR0003', 'Putri', 'P', 'Bogor', '1998-05-08', 'cirebon', '085223123601'),
-('KSR0004', 'Marayu', 'P', 'Bekasi', '2000-08-09', 'aceh', '085223123703'),
-('KSR0005', 'Adelia', 'P', 'Cirebon', '1999-01-12', 'cirebon', '085223123809'),
-('KSR0006', 'Dety', 'P', 'Cianjur', '1999-08-22', 'cianjur', '085223123907'),
-('KSR0007', 'Jundi', 'L', 'Jakarta', '1999-08-18', 'Margahayu', '085226123102'),
-('KSR0008', 'Rakha', 'L', 'Surabaya', '1996-04-05', 'kopo', '085224123119'),
-('KSR0009', 'Hema', 'P', 'Boyolali', '1999-07-09', 'boyolali', '085223123125'),
-('KSR0010', 'Hilmi', 'L', 'Batak', '1987-09-07', 'bojongsoang', '085223123137');
+INSERT INTO `kasir` (`id_kasir`, `nama`, `jenis_kelamin`, `tempat_lahir`, `tgl_lahir`, `alamat`, `no_hp`, `username`, `password`) VALUES
+('KSR0001', 'Ardhia', 'P', 'tasik', '1999-10-16', 'bandung', '085223123400', '0', ''),
+('KSR0002', 'Fitroh', 'L', 'Medan', '1996-12-12', 'jakarta', '085223123500', '0', ''),
+('KSR0003', 'Putri', 'P', 'Bogor', '1998-05-08', 'cirebon', '085223123601', 'paw1120', 'sayaaja'),
+('KSR0004', 'Marayu', 'P', 'Bekasi', '2000-08-09', 'aceh', '085223123703', 'MerCy', 'okelah'),
+('KSR0005', 'Adelia', 'P', 'Cirebon', '1999-01-12', 'cirebon', '085223123809', '0', ''),
+('KSR0006', 'Dety', 'P', 'Cianjur', '1999-08-22', 'cianjur', '085223123907', '0', ''),
+('KSR0007', 'Jundi', 'L', 'Jakarta', '1999-08-18', 'Margahayu', '085226123102', '0', ''),
+('KSR0008', 'Rakha', 'L', 'Surabaya', '1996-04-05', 'kopo', '085224123119', '0', ''),
+('KSR0009', 'Hema', 'P', 'Boyolali', '1999-07-09', 'boyolali', '085223123125', '0', ''),
+('KSR0010', 'Hilmi', 'L', 'Batak', '1987-09-07', 'bojongsoang', '085223123137', '0', '');
 
 -- --------------------------------------------------------
 
@@ -99,24 +103,26 @@ CREATE TABLE `manager` (
   `tempat_lahir` varchar(20) NOT NULL,
   `tgl_lahir` date NOT NULL,
   `alamat` varchar(60) NOT NULL,
-  `no_hp` varchar(13) NOT NULL
+  `no_hp` varchar(13) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `manager`
 --
 
-INSERT INTO `manager` (`id_manager`, `nama`, `jenis_kelamin`, `tempat_lahir`, `tgl_lahir`, `alamat`, `no_hp`) VALUES
-('MGR0001', 'Afham', 'L', 'Medan', '1993-08-10', 'Jl. Perjuangan No.101', '082277889966'),
-('MGR0002', 'Mar ayu', 'P', 'Jakarta', '1985-06-09', 'Jl. Kemerdekaan No. 8', '085277781976'),
-('MGR0003', 'Fauzi dzulfikar', 'L', 'Serang', '1997-09-12', 'Jl. Maladewa No.16 ', '085376593452'),
-('MGR0004', 'Aji santoso', 'L', 'Solo', '1993-09-16', 'Jl. Batu Nunggal No. 18', '082156723458'),
-('MGR0005', 'Dzakky', 'L', 'Bali', '1993-05-10', 'Jl. Sukajadi No. 76', '085277685436'),
-('MGR0006', 'Araysa', 'L', 'Bandung', '1992-06-12', 'Jl. Damai No. 5', '082361826025'),
-('MGR0007', 'Tuti pujiastuti', 'P', 'Bogor', '1995-07-13', 'Jl. Kemerdekaan No. 45 C', '082122564378'),
-('MGR0008', 'Melsandy', 'P', 'Yogyakarta', '1989-09-08', 'Jl. Braga No.24 C ', '085377689245'),
-('MGR0009', 'Maira iramawan', 'P', 'Riau', '1993-07-19', 'Jl. Cikapundung No.18 ', '082361789234'),
-('MGR0010', 'Imeldawati', 'P', 'Sukakarta', '1985-01-20', 'Jl. Diponegoro No. 108', '082135672165');
+INSERT INTO `manager` (`id_manager`, `nama`, `jenis_kelamin`, `tempat_lahir`, `tgl_lahir`, `alamat`, `no_hp`, `username`, `password`) VALUES
+('MGR0001', 'Afham', 'L', 'Medan', '1993-08-10', 'Jl. Perjuangan No.101', '082277889966', '', ''),
+('MGR0002', 'Mar ayu', 'P', 'Jakarta', '1985-06-09', 'Jl. Kemerdekaan No. 8', '085277781976', 'fotin', '123456'),
+('MGR0003', 'Fauzi dzulfikar', 'L', 'Serang', '1997-09-12', 'Jl. Maladewa No.16 ', '085376593452', '', ''),
+('MGR0004', 'Aji santoso', 'L', 'Solo', '1993-09-16', 'Jl. Batu Nunggal No. 18', '082156723458', '', ''),
+('MGR0005', 'Dzakky', 'L', 'Bali', '1993-05-10', 'Jl. Sukajadi No. 76', '085277685436', '', ''),
+('MGR0006', 'Araysa', 'L', 'Bandung', '1992-06-12', 'Jl. Damai No. 5', '082361826025', '', ''),
+('MGR0007', 'Tuti pujiastuti', 'P', 'Bogor', '1995-07-13', 'Jl. Kemerdekaan No. 45 C', '082122564378', '', ''),
+('MGR0008', 'Melsandy', 'P', 'Yogyakarta', '1989-09-08', 'Jl. Braga No.24 C ', '085377689245', '', ''),
+('MGR0009', 'Maira iramawan', 'P', 'Riau', '1993-07-19', 'Jl. Cikapundung No.18 ', '082361789234', '', ''),
+('MGR0010', 'Imeldawati', 'P', 'Sukakarta', '1985-01-20', 'Jl. Diponegoro No. 108', '082135672165', '', '');
 
 -- --------------------------------------------------------
 
@@ -147,7 +153,7 @@ INSERT INTO `obat` (`id_obat`, `nama_obat`, `jenis`, `dosis`, `expire_date`, `ko
 ('OBT0004', 'Simvastatin', 'Antihiperlipide', '10 mg', '2022-11-12', 'Simvastatin', 'Sakit kepala.\r\nGangguan pencernaan,\r\nKonstipasi,\r\nGangguan tidur,\r\nPenipisan rambut,\r\nRuam,\r\nKram otot,\r\nBingug atau gangguan daya ingat,\r\nPeningkatan kadar gula darah dan HbA1C pada pemeriksaan darah', 'Sebelum atau sesudah makan pada malam hari, hindari konsumsi jus anggur berlebihan (> 1 L/hari)\r\n.Usia dewasa : 10 mg - 20 mg, 1 kali per hari pada ma', 'SUP0004'),
 ('OBT0005', 'Omeprazole', 'AINS', '20 mg', '2022-09-09', 'Omeprazole', 'Gangguan pencernaan,ruam, pusing, hingga sesak napas', 'Dikonsumsi sebelum makan.Dewasa : 1 kali sehari 1 tablet (20 - 40 mg per hari selama 2-4 minggu)', 'SUP0005'),
 ('OBT0006', 'Amoxicillin', 'Antibiotik', '500 mg', '2023-02-11', 'Amoxicillin', 'Mual dan muntah,Mengalami diare,Sakit kepala,Ruam', 'Dikonsumsi sesudah makan. Dewasa 250 sampai 500 mg tiap 8 jam. Anak 20 mg/kgBB/hari terbagi tiap 8 jam. Infeksi berat diberikan dosis ganda. Jika akut', 'SUP0006'),
-('OBT0007', 'Asmadex', 'Antiasma', '25 mg', '0000-00-00', 'Ephedrine Hcl 10 Mg, Theophylline Anhydrous 130 Mg', 'Iritasi pada hidung,Sakit kepala,Mulut kering dan merasa haus,Kehilangan selera makan,Berdebar-debar', 'Dikonsumsi bersamaan dengan makanan. Dewasa : 3 kali sehari 1-2 tablet. Anak-anak : 2 kali sehari 1/2 tablet.\r\n', 'SUP0007'),
+('OBT0007', 'Asmadex', 'Antiasma', '25 mg', '2021-11-10', 'Ephedrine Hcl 10 Mg, Theophylline Anhydrous 130 Mg', 'Iritasi pada hidung,Sakit kepala,Mulut kering dan merasa haus,Kehilangan selera makan,Berdebar-debar', 'Dikonsumsi bersamaan dengan makanan. Dewasa : 3 kali sehari 1-2 tablet. Anak-anak : 2 kali sehari 1/2 tablet.\r\n', 'SUP0007'),
 ('OBT0008', 'Methylprednisolone', 'Anti Inflamasi', '4 mg', '2021-05-06', 'Methyprednisolone', 'Mual dan muntah,Nyeri ulu hati,Sakit perut,\r\nGangguan pencernaan,Lemas dan lelah,Mengeluarkan banyak keringat,Uring-uringan,Kecemasan dan depresi,Sulit tidur.', 'Dikonsumsi setelah makan.  1 tablet, 1-2 kali sehari. Dosis per hari: 4 - 48 mg per hari, tergantung dari jenis dan beratnya penyakit dan respon pasie', 'SUP0008'),
 ('OBT0009', 'FG Throches', 'Antibiotik', '1 kaplet', '2021-05-08', 'Fradiomicin 2.5 mg dan Gramidicin 1.0 mg', 'Kehitaman pada lidah, mukosa mulut berwarna kemerahan, dan glossitis,\r\nDefisiensi vitamin K yang ditandai dengan resiko pendarahan (jarang)\r\nDefisiensi vitamin B seperti glositis, stomatitis (sariawan), tidak nafsu makan, dan nyeri-nyeri pada saraf', 'Dihisap hingga larut. Dewasa: 1 - 2 tablet, dihisap 4 - 5 kali perhari. Anak-anak : 1 tablet, dihisap 4 - 5 kali perhari', 'SUP0009'),
 ('OBT0010', 'Chlorpheniramine', 'Antihistamin', '4 mg', '2022-08-04', 'Chlorpheniramine maleat 4 mg', 'Sakit kepala,Mengantuk,Mual,Muntah,Nafsu makan berkurang,Sembelit atau konstipasi\r\n,Mulut, hidung, dan tenggorokan kering\r\n,Gangguan penglihatan\r\nSulit buang air kecil.', 'Diberikan bersama atau tanpa makanan.Dewasa 3-4 kali/hari 1/2-1 tablet, Anak 3-4 kali/hari 1/4-1/2 tablet', 'SUP0010');
@@ -180,7 +186,8 @@ INSERT INTO `pembayaran` (`id_pembayaran`, `id_pemesanan`, `id_kasir`, `tgl_pemb
 ('PBR0007', 'PMS0007', 'KSR0007', '2018-10-01', 85000),
 ('PBR0008', 'PMS0008', 'KSR0008', '2018-10-12', 100000),
 ('PBR0009', 'PMS0009', 'KSR0009', '2018-11-25', 65000),
-('PBR0010', 'PMS0010', 'KSR0010', '2018-12-30', 100000);
+('PBR0010', 'PMS0010', 'KSR0010', '2018-12-30', 100000),
+('PBR0011', 'PMS0010', 'KSR0001', '2019-12-12', 50000);
 
 -- --------------------------------------------------------
 
@@ -208,7 +215,9 @@ INSERT INTO `pemesanan` (`id_pemesanan`, `tgl_pemesanan`, `total_pemesanan`) VAL
 ('PMS0007', '2018-10-01', 1),
 ('PMS0008', '2018-10-12', 1),
 ('PMS0009', '2018-11-25', 1),
-('PMS0010', '2018-12-30', 1);
+('PMS0010', '2018-12-30', 1),
+('PMS0011', '2019-09-24', 2),
+('PMS0012', '2019-12-09', 2);
 
 -- --------------------------------------------------------
 
@@ -223,24 +232,26 @@ CREATE TABLE `pendata` (
   `tempat_lahir` varchar(20) NOT NULL,
   `tgl_lahir` date NOT NULL,
   `alamat` varchar(60) NOT NULL,
-  `no_hp` varchar(13) NOT NULL
+  `no_hp` varchar(13) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `pendata`
 --
 
-INSERT INTO `pendata` (`id_pendata`, `nama`, `jenis_kelamin`, `tempat_lahir`, `tgl_lahir`, `alamat`, `no_hp`) VALUES
-('PDA0001', 'Suryanto', 'L', 'Medan', '1992-08-17', 'Jl. Beo No. 11', '085247681904'),
-('PDA0002', 'Deriyano', 'L', 'Jakarta', '1987-02-19', 'Jl. Buah Batu No. 8', '082356784909'),
-('PDA0003', 'Alfinsyah', 'L', 'Serang', '1988-09-15', 'Jl. Ahmad yani No.10, Bandung ', '085578983456'),
-('PDA0004', 'Putri agustina', 'P', 'Solo', '1993-08-16', 'Jl. Maladewa No.101', '089834567218'),
-('PDA0005', 'Dela Puspita', 'P', 'Bali', '1995-05-17', 'JL. Mekarsari No. 102B', '081945682347'),
-('PDA0006', 'Meilania ZA', 'P', 'Bandung', '1996-06-12', 'Jl. Taman Kota No. 145', '081398345745'),
-('PDA0007', 'Fachrian', 'L', 'Bogor', '1995-07-13', 'Jl. Medan Tempur No. 45', '082267893456'),
-('PDA0008', 'Ricky Harun', 'L', 'Yogyakarta', '1989-09-05', 'Jl. Sutomo ujung No. 121 A', '082145678923'),
-('PDA0009', 'Mayland dewa', 'L', 'Riau', '1992-07-19', 'Jl. Perjuangan No. 10', '081545627892'),
-('PDA0010', 'Kartika dewi', 'P', 'Sukakarta', '1985-01-20', 'Jl. Sutomo ujung No. 10 A', '082354678923');
+INSERT INTO `pendata` (`id_pendata`, `nama`, `jenis_kelamin`, `tempat_lahir`, `tgl_lahir`, `alamat`, `no_hp`, `username`, `password`) VALUES
+('PDA0001', 'Suryanto', 'L', 'Medan', '1992-08-17', 'Jl. Beo No. 11', '085247681904', '', ''),
+('PDA0002', 'Deriyano', 'L', 'Jakarta', '1987-02-19', 'Jl. Buah Batu No. 8', '082356784909', 'DeryXo', '123456'),
+('PDA0003', 'Alfinsyah', 'L', 'Serang', '1988-09-15', 'Jl. Ahmad yani No.10, Bandung ', '085578983456', '', ''),
+('PDA0004', 'Putri agustina', 'P', 'Solo', '1993-08-16', 'Jl. Maladewa No.101', '089834567218', '', ''),
+('PDA0005', 'Dela Puspita', 'P', 'Bali', '1995-05-17', 'JL. Mekarsari No. 102B', '081945682347', '', ''),
+('PDA0006', 'Meilania ZA', 'P', 'Bandung', '1996-06-12', 'Jl. Taman Kota No. 145', '081398345745', '', ''),
+('PDA0007', 'Fachrian', 'L', 'Bogor', '1995-07-13', 'Jl. Medan Tempur No. 45', '082267893456', '', ''),
+('PDA0008', 'Ricky Harun', 'L', 'Yogyakarta', '1989-09-05', 'Jl. Sutomo ujung No. 121 A', '082145678923', '', ''),
+('PDA0009', 'Mayland dewa', 'L', 'Riau', '1992-07-19', 'Jl. Perjuangan No. 10', '081545627892', '', ''),
+('PDA0010', 'Kartika dewi', 'P', 'Sukakarta', '1985-01-20', 'Jl. Sutomo ujung No. 10 A', '082354678923', '', '');
 
 -- --------------------------------------------------------
 
@@ -384,18 +395,6 @@ ALTER TABLE `pembayaran`
 --
 ALTER TABLE `resep`
   ADD CONSTRAINT `apoteker_fk` FOREIGN KEY (`id_apoteker`) REFERENCES `apoteker` (`id_apoteker`) ON DELETE CASCADE ON UPDATE CASCADE;
-  
-  
-SELECT * FROM 'pendata';
-SELECT * FROM 'apoteker';
-SELECT * FROM 'manager';
-SELECT * FROM 'kasir';
-SELECT * FROM 'obat';
-SELECT * FROM 'resep';
-SELECT * FROM 'pemesanan';
-SELECT * FROM 'pembayaran';
-SELECT * FROM 'supplier';
-
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
